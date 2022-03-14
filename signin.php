@@ -1,14 +1,4 @@
-<?php 
-
-session_start();
-
-if(!isset($_SESSION['username'])){
-
-	header('location:signin.php');
-}
-
- ?>
- <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -18,15 +8,51 @@ if(!isset($_SESSION['username'])){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Project</title>
-  </head>
-  <body>
-  	<div class="container">
-   		<h2 class="text-center text-success
-   		">Welcome <?php echo $_SESSION['username']; ?></h2>
- 		<a href="logout.php">Logout</a>
+    <title>Sign in</title>
 
-	</div>
+    <style>
+        .body {
+            overflow-x : hidden;
+        }
+
+        #box 
+        {
+            /* display: flex */
+            margin-top : 225px;
+            margin-left : 500px;
+        } 
+
+        .title
+        {
+            text-align : center;
+            margin-bottom : 1em;
+        }
+    </style>
+
+  </head>
+  <body class="body">
+ 		<div class="container col-lg-12" id="box">
+ 			<div class="row">
+ 				<div class="col-lg-4">
+ 					<h2 class="title">Sign in Form</h2>
+ 					<form action="registration.php" method="post">
+
+ 						<div class="form-group">
+ 							<label>Username</label>
+ 							<input type="text" name="user" class="form-control">
+ 						</div>
+ 						<div class="form-group">
+ 							<label>Password</label>
+ 							<input type="Password" name="password" class="form-control">
+ 						</div>
+ 						<button type="submit" class="btn" > <a href="./login.php">Sign in</a></button>
+ 						
+ 					</form>
+
+ 				</div>
+ 			</div>
+ 		</div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
